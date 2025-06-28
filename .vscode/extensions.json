@@ -1,5 +1,19 @@
 {
-    "recommendations": [
-        "continue.continue"
-    ]
+  "recommendations": [
+    "github.copilot",                            // Copilot Core
+    "ms-python.python",                          // Python IntelliSense & Linting
+    "streetsidesoftware.code-spell-checker",     // Lightweight spell checker
+    "continue.continue"                          // Optional: Local LLM/agent runner
+  ],
+  "unwantedRecommendations": [
+    "ms-toolsai.jupyter",                        // Heavy memory usage
+    "ms-vscode.vscode-typescript-next",          // Often unused in Python-heavy stacks
+    "ms-azuretools.vscode-docker",               // Heavy, slow indexing
+    "ms-vsliveshare.vsliveshare",                // Rarely used, high background resource cost
+    "esbenp.prettier-vscode",                    // Not needed unless JS/React dev is heavy
+    "formulahendry.auto-close-tag",              // Can slow down large HTML files
+    "eamodio.gitlens"                            // Great but heavy for large repos
+  ]
 }
+// Note: This file is for VS Code extension recommendations.
+// It helps set up a lightweight, efficient Python development environment.

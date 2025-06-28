@@ -1,65 +1,56 @@
-# Ignore node_modules everywhere
+# ⚙️ Node.js
 node_modules/
+frontend/node_modules/
 
-# Ignore Python cache and virtual envs
+# 🐍 Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
-*.pyd
 venv/
 .env
+.env.*
+backend/__pycache__/
+backend/venv/
+backend/.env
+backend/app/__pycache__/
 
-# Ignore model and large files
+# 🤖 AI Models / Checkpoints
 *.safetensors
 *.h5
 *.pt
 *.ckpt
 *.onnx
-
-# Ignore build output
-.next/
-dist/
-build/
-
-# Ignore OS files
-.DS_Store
-Thumbs.db
-
-# Ignore log files
-*.log
-
-# Ignore database files
-database/
-
-# Ignore Docker artifacts
-*.pid
-*.sock
-
-# Ignore environment and secret files
-.env.*
-
-# Ignore VSCode settings
-.vscode/
-
-# Ignore deployments
-/deployments/
-
-# Ignore frontend build artifacts
-frontend/.next/
-frontend/node_modules/
-
-# Ignore backend build artifacts
-backend/__pycache__/
-backend/.env
-backend/venv/
-backend/app/__pycache__/
-
-# Ignore large model files in backend/app
 backend/app/*.safetensors
 backend/app/*.pt
 backend/app/*.onnx
-
-# Ignore large model files in all subfolders
 **/*.safetensors
 **/*.pt
 **/*.onnx
+
+# 🏗️ Build Artifacts
+.next/
+dist/
+build/
+frontend/.next/
+
+# ⚠️ Logs & Debug
+*.log
+
+# 🧱 Database
+database/
+
+# 🐳 Docker
+*.pid
+*.sock
+
+# 🛠️ IDEs & Editor Junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# 🚀 Deployment
+/deployments/
+# 📦 Package Files
+*.tgz
+*.zip
+*.tar.gz
