@@ -40,6 +40,31 @@ A modern SaaS platform for real-time plagiarism detection using FastAPI, Pinecon
 
 ---
 
+## 📂 Important Note About Dependencies
+
+- The `node_modules` folder (for the frontend) and Python virtual environments are NOT stored in the repository. This is standard practice for all modern projects.
+- After cloning the repository, you **must** run the following commands to install dependencies:
+
+  **For the frontend:**
+  ```sh
+  cd frontend
+  npm install
+  ```
+  This will create the `node_modules` folder automatically.
+
+  **For the backend (if using a virtual environment):**
+  ```sh
+  cd backend
+  python -m venv venv
+  venv\Scripts\activate  # On Windows
+  source venv/bin/activate  # On Mac/Linux
+  pip install -r requirements.txt
+  ```
+
+- All required dependencies are listed in `package.json`/`package-lock.json` (frontend) and `requirements.txt` (backend). Make sure these files are committed and up to date.
+
+---
+
 ## 📝 API Usage
 
 - **POST** `/api/check-plagiarism`
