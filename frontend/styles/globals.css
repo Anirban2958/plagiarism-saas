@@ -1,0 +1,11 @@
+/* =====================
+   Global Styles for Next.js App (Tailwind CSS)
+   =====================
+   This file imports Tailwind's base, component, and utility styles.
+   Make sure Tailwind CSS is set up with PostCSS or a compatible build tool for these directives to work.
+*/
+
+@tailwind base;        /* Tailwind's base styles (resets, typography, etc.) */
+@tailwind components;  /* Tailwind's component classes (buttons, forms, etc.) */
+@tailwind utilities;   /* Tailwind's utility classes (margin, padding, colors, etc.) */
+

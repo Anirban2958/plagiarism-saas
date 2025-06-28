@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sentence-transformers
+pinecone
+nltk
+wikipedia
+requests
+python-dotenv

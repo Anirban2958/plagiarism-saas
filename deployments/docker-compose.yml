@@ -1,0 +1,27 @@
+# =====================
+# Docker Compose file for Plagiarism SaaS
+# =====================
+# This file defines and runs both backend (FastAPI) and frontend (Next.js) services.
+
+version: '3.8'
+
+services:
+  # ---------------------
+  # Backend API service
+  # ---------------------
+  backend:
+    build: ./backend  # Build the backend image from the backend directory
+    ports:
+      - "8000:8000"   # Map host port 8000 to container port 8000
+    env_file:
+      - .env          # Load environment variables from .env file
+
+  # ---------------------
+  # Frontend (Next.js) service
+  # ---------------------
+  frontend:
+    build: ./frontend # Build the frontend image from the frontend directory
+    ports:
+      - "3000:3000"   # Map host port 3000 to container port 3000
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000 # Frontend will call backend at this URL
