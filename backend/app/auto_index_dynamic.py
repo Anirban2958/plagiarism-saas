@@ -28,14 +28,15 @@ load_dotenv()
 # 4. Ensure NLTK punkt tokenizer is available
 #    (Required for sentence splitting)
 # =====================
+'''try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.data.path.append(os.path.join(os.path.dirname(__file__), '../../nltk_data'))'''
+nltk.data.path.append("/opt/render/nltk_data")
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
-    nltk.data.path.append(os.path.join(os.path.dirname(__file__), '../../nltk_data'))
-    try:
-        nltk.data.find('tokenizers/punkt')
-    except LookupError:
-        raise RuntimeError('NLTK punkt tokenizer not found. Please copy it to backend/nltk_data/tokenizers/punkt')
+    raise RuntimeError('NLTK punkt tokenizer not found. Please copy it to backend/nltk_data/tokenizers/punkt')
 
 # =====================
 # 5. Load the sentence embedding model
