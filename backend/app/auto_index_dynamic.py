@@ -28,11 +28,11 @@ load_dotenv()
 # 4. Ensure NLTK punkt tokenizer is available
 #    (Required for sentence splitting)
 # =====================
-'''try:
+try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
-    nltk.data.path.append(os.path.join(os.path.dirname(__file__), '../../nltk_data'))'''
-nltk.data.path.append("/opt/render/nltk_data")
+    nltk.data.path.append(os.path.join(os.path.dirname(__file__), '../../nltk_data'))
+
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
@@ -50,7 +50,7 @@ model = SentenceTransformer(model_path_full)
 # 6. Initialize Pinecone vector database
 #    (Optional: Used if you want to store/query embeddings in Pinecone)
 # =====================
-pc = Pinecone(api_key=os.getenv("pcsk_6FXJ9Z_7D3jaQtwN4qHeYJ6SqmS7dUkDVmqKQyYoFy2RT6xtsTZyDkL3RKsb3oP5a3ApvY"))
+pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 index = pc.Index("plagiarism-check")
 
 # =====================

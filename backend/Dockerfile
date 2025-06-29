@@ -17,4 +17,4 @@ COPY ./app ./app
 
 # 5. Start the FastAPI app using Uvicorn
 #    - app.plagiarism_api:app means 'app' package, 'plagiarism_api.py', 'app' instance
-CMD ["uvicorn", "app.plagiarism_api:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.plagiarism_api:app", "--host", "0.0.0.0", "--port", "8080"]
