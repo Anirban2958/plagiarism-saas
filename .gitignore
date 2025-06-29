@@ -54,3 +54,9 @@ Thumbs.db
 *.tgz
 *.zip
 *.tar.gz
+
+# Environment variables and secrets
+.env
+.env.*
+backend/.env
+frontend/.env

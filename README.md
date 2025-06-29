@@ -19,6 +19,7 @@ A modern SaaS platform for real-time plagiarism detection using FastAPI, Pinecon
 - `frontend/`  — Next.js frontend (user interface)
 - `deployments/` — Docker Compose setup
 - `database/`  — (Optional) Database config/data
+- `run.bat`    — Batch file to start backend and frontend easily (Windows)
 
 ---
 
@@ -29,14 +30,52 @@ A modern SaaS platform for real-time plagiarism detection using FastAPI, Pinecon
    git clone https://github.com/yourusername/plagiarism-saas.git
    cd plagiarism-saas
    ```
-2. **Build and start all services:**
-   ```sh
-   cd deployments
-   docker-compose up --build
-   ```
-3. **Access the app:**
+2. **Install dependencies:**
+   - Backend:
+     ```sh
+     cd backend
+     python -m venv venv
+     venv\Scripts\activate  # On Windows
+     pip install -r requirements.txt
+     ```
+   - Frontend:
+     ```sh
+     cd ../frontend
+     npm install
+     ```
+3. **Run the app (Windows, recommended):**
+   - Use the provided `run.bat` file in the project root:
+     ```sh
+     ./run.bat
+     ```
+   This will start both the backend and frontend automatically.
+
+4. **Manual run (if not using run.bat):**
+   - Backend:
+     ```sh
+     cd backend
+     venv\Scripts\activate  # On Windows
+     uvicorn app.plagiarism_api:app --host 0.0.0.0 --port 8000
+     ```
+   - Frontend (in a new terminal):
+     ```sh
+     cd frontend
+     npm run dev
+     ```
+
+5. **Access the app:**
    - API: [http://localhost:8000](http://localhost:8000)
    - Frontend: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🔒 Keeping Your Keys & Secrets Safe
+
+- **Never commit API keys, secrets, or passwords to your code or GitHub!**
+- Store all sensitive information in `.env` files (e.g., `backend/.env`, `frontend/.env`).
+- The `.gitignore` file is set up to prevent `.env` files from being tracked by git.
+- If you have already committed secrets, **revoke them and generate new ones** immediately.
+- For extra safety, review your repo’s commit history and remove any secrets if needed.
 
 ---
 
