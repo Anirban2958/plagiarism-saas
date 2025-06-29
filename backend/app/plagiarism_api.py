@@ -1,4 +1,3 @@
-
 # =====================
 # 1. Import dependencies
 # =====================
@@ -52,5 +51,13 @@ def check_plagiarism(req: PlagiarismRequest):
 
 
 # =====================
-# 6. Run with: uvicorn plagiarism_api:app --reload --host 0.0.0.0 --port 8000
+# Root route for health check or welcome message
+# =====================
+@app.get("/")
+def root():
+    return {"message": "Plagiarism SaaS API is running!"}
+
+
+# =====================
+# 6. Run with: uvicorn plagiarism_api:app --reload --host 0.0.0.0 --port 8080
 # =====================
