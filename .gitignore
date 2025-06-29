@@ -29,9 +29,9 @@ backend/app/*.onnx
 
 # 🏗️ Build Artifacts
 .next/
+frontend/.next/ # Ignore Next.js build artifacts
 dist/
 build/
-frontend/.next/
 
 # ⚠️ Logs & Debug
 *.log
