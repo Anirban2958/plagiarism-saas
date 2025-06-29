@@ -31,6 +31,11 @@ load_dotenv()
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
     nltk.data.path.append(os.path.join(os.path.dirname(__file__), '../../nltk_data'))
 
 try:
