@@ -3,7 +3,11 @@
     "github.copilot",                            // Copilot Core
     "ms-python.python",                          // Python IntelliSense & Linting
     "streetsidesoftware.code-spell-checker",     // Lightweight spell checker
-    "continue.continue"                          // Optional: Local LLM/agent runner
+    "continue.continue",
+    "anthropic.claude-code",
+    "saoudrizwan.claude-dev",
+    "danielsanmedium.dscodegpt",
+    "christian-kohler.npm-intellisense" // Optional: Local LLM/agent runner
   ],
   "unwantedRecommendations": [
     "ms-toolsai.jupyter",                        // Heavy memory usage
