@@ -13,7 +13,8 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 3.5 # Add this line to download NLTK stopwords during build
-RUN python -m nltk.downloader stopwords punkt
+RUN python -m nltk.downloader punkt stopwords wordnet averaged_perceptron_tagger
+
 
 # 4. Copy the application code into the container
 COPY ./app ./app
