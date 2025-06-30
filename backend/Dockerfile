@@ -12,9 +12,13 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
+# 3.5 ⬅️ Add this to download NLTK stopwords
+RUN python -m nltk.downloader stopwords
+
 # 4. Copy the application code into the container
 COPY ./app ./app
 
 # 5. Start the FastAPI app using Uvicorn
-#    - app.plagiarism_api:app means 'app' package, 'plagiarism_api.py', 'app' instance
 CMD ["uvicorn", "app.plagiarism_api:app", "--host", "0.0.0.0", "--port", "8080"]
+# 6. Expose the port on which the FastAPI app is running
+EXPOSE 8080 
