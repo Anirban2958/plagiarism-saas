@@ -20,7 +20,7 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 # =====================
 # 4. Initialize Pinecone vector database
 # =====================
-pc = Pinecone(api_key=os.getenv("pcsk_6FXJ9Z_7D3jaQtwN4qHeYJ6SqmS7dUkDVmqKQyYoFy2RT6xtsTZyDkL3RKsb3oP5a3ApvY"))
+pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 index = pc.Index("plagiarism-check")
 
 # =====================
