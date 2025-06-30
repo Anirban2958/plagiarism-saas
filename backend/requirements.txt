@@ -1,7 +1,7 @@
 fastapi
 uvicorn
 sentence-transformers
-pinecone
+pinecone-client
 nltk
 wikipedia
 requests
