@@ -86,7 +86,7 @@ export default function Home() {
     setToast(null);
     try {
       // Send the text to the backend API for plagiarism checking
-      const response = await fetch('http://localhost:8000/api/check-plagiarism', {
+      const response = await fetch('http://127.0.0.1:8080/api/check-plagiarism', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
