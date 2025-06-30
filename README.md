@@ -55,7 +55,7 @@ A modern SaaS platform for real-time plagiarism detection using FastAPI, Pinecon
      ```sh
      cd backend
      venv\Scripts\activate  # On Windows
-     uvicorn app.plagiarism_api:app --host 0.0.0.0 --port 8000
+      uvicorn app.plagiarism_api:app --reload --host 127.0.0.1 --port 8080
      ```
    - Frontend (in a new terminal):
      ```sh
