@@ -12,8 +12,8 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 3.5 ⬅️ Add this to download NLTK stopwords
-RUN python -m nltk.downloader stopwords
+# 3.5 # Add this line to download NLTK stopwords during build
+RUN python -m nltk.downloader stopwords punkt
 
 # 4. Copy the application code into the container
 COPY ./app ./app
